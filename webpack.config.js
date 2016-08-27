@@ -8,12 +8,16 @@ module.exports = {
 	module: {
 		loaders: [
 			{
-				test: /.js$/,
+				test: /.jsx?$/,
 				loader: 'babel-loader',
 				exclude: /node_modules/,
 				query: JSON.parse(
 					fs.readFileSync('./.babelrc', 'utf8')
 				)
+			},
+			{
+				test: /.json$/,
+				loader: 'json-loader'
 			}
 		]
 	}
